@@ -1,4 +1,3 @@
-#!/bin/python3
 # 第1回 課題3: ヒストグラムの作成
 # 提出: https://cclms.kyoto-su.ac.jp/mod/assign/view.php?id=145510
 # 教材: https://ksubpb.github.io/2024/lesson01/assignments/#課題01-3-ヒストグラムの作成
