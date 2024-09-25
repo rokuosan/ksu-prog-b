@@ -37,11 +37,11 @@ def main():
     number = sys.argv[2]
     name = sys.argv[3]
     print (f"section: {section}, number: {number}, name: {name}")
-    if not re.compile(r"^[a-zA-Z0-9]+$").match(name):
-        print("課題コードは制約/^[a-zA-Z0-9]+$/を満たすようにしてください")
+    if not re.compile(r"^[a-zA-Z0-9-_]+$").match(name):
+        print("課題コードは制約/^[a-zA-Z0-9-_]+$/を満たすようにしてください")
         return
 
-    filename = f"./src/{section:>02}{number}-{name}.py"
+    filename = f"./src/{name}.py"
     with open(filename, "w") as f:
         f.write(make_header(section, number))
 
