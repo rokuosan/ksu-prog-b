@@ -1,0 +1,3 @@
+https://ksubpb.github.io/2024/lesson01/assets/vscode_lines.dat
+https://ksubpb.github.io/2024/lesson03/assets/alice_chapter01.txt
+https://ksubpb.github.io/2024/lesson03/assets/weather2000-2023.csv
