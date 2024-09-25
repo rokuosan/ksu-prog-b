@@ -36,7 +36,6 @@ def main():
     section = sys.argv[1]
     number = sys.argv[2]
     name = sys.argv[3]
-    print (f"section: {section}, number: {number}, name: {name}")
     if not re.compile(r"^[a-zA-Z0-9-_]+$").match(name):
         print("課題コードは制約/^[a-zA-Z0-9-_]+$/を満たすようにしてください")
         return
@@ -44,6 +43,7 @@ def main():
     filename = f"./src/{name}.py"
     with open(filename, "w") as f:
         f.write(make_header(section, number))
+    print(filename)
 
 
 if __name__ == "__main__":
