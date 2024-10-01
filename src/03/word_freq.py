@@ -9,7 +9,7 @@ dic = {}   # 単語の出現回数を格納する辞書
 for file in sys.argv[1:]:
     with open(file, "r") as f:
         for line in f:   # ファイルを1行ずつ読み込む
-            for word in re.split(r"[, :.\t]", line): # 正規表現で区切る
+            for word in re.split(r"[, :.'\"“()\r\n\s]", line): # 正規表現で区切る
                 # 単語が辞書にあれば，カウントを1増やす．なければ，1を代入する．
                 if word in dic:
                     dic[word] += 1
