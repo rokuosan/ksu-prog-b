@@ -6,10 +6,10 @@
 import sys
 
 for v in sys.argv[1:]:
-    num = int(v) # コマンドライン引数を整数に変換する．
-    factors = [] # 素因数を格納するリストを初期化する．
+    num = int(v)  # コマンドライン引数を整数に変換する．
+    factors = []  # 素因数を格納するリストを初期化する．
     value = num  # 素因数分解する値を初期化する．
-    factor = 2   # 素因数
+    factor = 2  # 素因数
     # factor が value より小さい間繰り返す．
     while factor < value:
         # value が factor で割り切れたら

@@ -10,14 +10,14 @@ def calc(value1, operator, value2):
     # return eval(f"{value1} {operator} {value2}")
     operators = {
         "+": op.add,
-        '-': op.sub,
-        '*': op.mul,
-        '/': op.truediv,
+        "-": op.sub,
+        "*": op.mul,
+        "/": op.truediv,
     }
     return operators[operator](value1, value2)
+
 
 assert calc(4, "+", 2) == 6
 assert calc(4, "-", 2) == 2
 assert calc(4, "*", 2) == 8
 assert calc(4, "/", 2) == 2
-

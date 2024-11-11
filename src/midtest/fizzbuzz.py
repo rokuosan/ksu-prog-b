@@ -1,12 +1,13 @@
 def fizzbuzz(number):
-    if (number % 15 == 0):
+    if number % 15 == 0:
         return "FizzBuzz"
-    elif (number % 5 == 0):
+    elif number % 5 == 0:
         return "Buzz"
-    elif (number % 3 == 0):
+    elif number % 3 == 0:
         return "Fizz"
     else:
         return number
+
 
 assert fizzbuzz(15) == "FizzBuzz", "Error: fizzbuzz(15) が 'FizzBuzz' を返しません．"
 assert fizzbuzz(5) == "Buzz", "Error: fizzbuzz(5) が 'Buzz' を返しません．"

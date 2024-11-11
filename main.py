@@ -2,7 +2,8 @@
 import re
 import sys
 
-def make_header(section: int, number: int)->str:
+
+def make_header(section: int, number: int) -> str:
     """ヘッダーを作成する
 
     Parameters:
@@ -24,9 +25,12 @@ def make_header(section: int, number: int)->str:
 # 作成: 2454575 / 松本 紘輝
     """.strip()
 
+
 def test():
     import doctest
+
     doctest.testmod()
+
 
 def main():
     if len(sys.argv) != 4:

@@ -4,11 +4,13 @@
 
 import sys
 
+
 def count_chars(str):
     freq = dict()
     for c in str.lower():
         freq[c] = freq.get(c, 0) + 1
     return freq
+
 
 for arg in sys.argv[1:]:
     print(f"{arg}: {count_chars(arg)}")

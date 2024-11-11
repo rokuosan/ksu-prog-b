@@ -3,15 +3,15 @@
 # 教材: https://ksubpb.github.io/2024/lesson02/assignments/#課題02-1-乱数値100個の統計
 # 作成: 2454575 / 松本 紘輝
 
-import random # 乱数を生成するためのライブラリ
+import random  # 乱数を生成するためのライブラリ
 
 randoms = []
-max = 0 # 最大値，
-min = float('inf')# 最小値，
-sum = 0 # 合計値の初期値を適切に設定しましょう．
+max = 0  # 最大値，
+min = float("inf")  # 最小値，
+sum = 0  # 合計値の初期値を適切に設定しましょう．
 
-for i in range(100):              # 100 回繰り返す．
-    num = random.randint(1, 1000) # 1 以上 1000 未満の乱数を生成する．
+for i in range(100):  # 100 回繰り返す．
+    num = random.randint(1, 1000)  # 1 以上 1000 未満の乱数を生成する．
     # randoms に num を追加する．
     randoms.append(num)
     # 最大値，最小値，合計値を更新する．

@@ -3,7 +3,8 @@ def sum_range(until, start=1):
         return 0
 
     # return int(sum(list(range(start, until + 1))))
-    return int((until + start) * ((until - start + 1) *0.5))
+    return int((until + start) * ((until - start + 1) * 0.5))
+
 
 assert sum_range(10) == 55, "Error: sum_range(10) が 55 を返しません．"
 assert sum_range(10, 3) == 52, "Error: sum_range(10, 3) が 52 を返しません．"

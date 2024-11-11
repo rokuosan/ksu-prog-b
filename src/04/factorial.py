@@ -9,7 +9,8 @@ def factorial(n):
     if n == 0:
         return 1
     else:
-        return n * factorial(n-1)
+        return n * factorial(n - 1)
+
 
 for arg in sys.argv[1:]:
     n = int(arg)

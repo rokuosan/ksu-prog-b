@@ -46,17 +46,19 @@ dic = {}
 years = set()
 
 with open(sys.argv[1], "r") as f:
-    f.readline()                # 1行目を読み飛ばす．
+    f.readline()  # 1行目を読み飛ばす．
     for line in f.readlines():
-        (date, max_s, min_s, rests) = line.split(",") # 行をコンマで分割し，それぞれを代入する．
+        (date, max_s, min_s, rests) = line.split(
+            ","
+        )  # 行をコンマで分割し，それぞれを代入する．
         (year, max, min) = (date[:4], float(max_s), float(min_s))
         (extremely_hot, hot, summer, ice, frost) = (0, 0, 0, 0, 0)
-        years.add(year)      # 年を集合に追加しておく．
+        years.add(year)  # 年を集合に追加しておく．
 
         # 猛暑日，真夏日，夏日，真冬日，冬日を判定する．
         # extermely_hot, hot, summer, ice, frost いずれかを1にする or 0 のままにする．
         y = list(dic.get(year, (extremely_hot, hot, summer, ice, frost, 0)))
-        if y[len(y)-1] == 0:
+        if y[len(y) - 1] == 0:
             dic[year] = tuple(y)
         for i, b in enumerate(barometer):
             if b["condition"](max, min):
@@ -73,6 +75,8 @@ with open(sys.argv[1], "r") as f:
         else:
             dic[year] = (extremely_hot, hot, summer, ice, frost, 1)
 
-for year in sorted(years): # 年を昇順にソートして繰り返す．
+for year in sorted(years):  # 年を昇順にソートして繰り返す．
     (extremely_hot, hot, summer, ice, frost, days) = dic[year]
-    print(f"{year}  猛暑日 {extremely_hot:>3}, 真夏日 {hot:>2}, 夏日 {summer:>2}, 真冬日 {ice:>2}, 冬日 {frost:>2} ({days:>3}日)")
+    print(
+        f"{year}  猛暑日 {extremely_hot:>3}, 真夏日 {hot:>2}, 夏日 {summer:>2}, 真冬日 {ice:>2}, 冬日 {frost:>2} ({days:>3}日)"
+    )

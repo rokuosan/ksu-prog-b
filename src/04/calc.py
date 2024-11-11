@@ -11,14 +11,15 @@ def calc(value1, operator, value2):
     # return eval(f"{value1} {operator} {value2}")
     operators = {
         "+": op.add,
-        '-': op.sub,
-        '*': op.mul,
-        '/': op.truediv,
+        "-": op.sub,
+        "*": op.mul,
+        "/": op.truediv,
     }
     return operators[operator](value1, value2)
 
+
 if len(sys.argv) != 4:
-    print('Usage: python3 calc.py <value1> <operator> <value2>')
+    print("Usage: python3 calc.py <value1> <operator> <value2>")
     sys.exit(1)
 value1 = int(sys.argv[1])
 operator = sys.argv[2]

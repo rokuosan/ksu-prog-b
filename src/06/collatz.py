@@ -4,6 +4,7 @@
 
 import sys
 
+
 def collatz(x, list):
     list.append(x)
     if x != 1:
@@ -14,8 +15,9 @@ def collatz(x, list):
         else:
             return collatz(x * 3 + 1, list)
 
+
 for value in sys.argv[1:]:
     n = int(value)
     list = []
     collatz(n, list)
-    print(f'collatz({n}) = {list} ({len(list)} steps)')
+    print(f"collatz({n}) = {list} ({len(list)} steps)")
