@@ -4,6 +4,7 @@
 import sys
 import os
 
+
 # file_path というファイルに keyword が含まれているかを判定する関数
 # 含まれていれば True を返し，そうでなければ False を返す．
 def contains_keyword(file_path, keyword):
@@ -18,9 +19,10 @@ def contains_keyword(file_path, keyword):
     # 含まれていなければ False を返す．
     return False
 
+
 # name という名前のファイルを base 以下から探す関数．
 # 複数見つかる場合もありうるため，見つかったものをリストで返す．
-def find_grep(keyword, base, result = None):
+def find_grep(keyword, base, result=None):
     if result is None:
         result = []
 
@@ -28,17 +30,20 @@ def find_grep(keyword, base, result = None):
     if os.path.isdir(base):
         # base の一覧を取得し，それぞれを処理する．
         for child in os.listdir(base):
-            if not child.startswith("."): # 隠しファイルは対象外とする．
+            if not child.startswith("."):  # 隠しファイルは対象外とする．
                 # それぞれのアイテムに対して，base と child を join する．
                 child_path = os.path.join(base, child)
                 # find_grep を再起的に呼び出す．
                 find_grep(keyword, child_path, result)
     # そうでない場合
     else:
-        if contains_keyword(base, keyword): # base に keyword が含まれているかを判定する．
+        if contains_keyword(
+            base, keyword
+        ):  # base に keyword が含まれているかを判定する．
             # result に base を追加する．
             result.append(base)
     return result
+
 
 for base in sys.argv[2:]:
     paths = find_grep(sys.argv[1], base)

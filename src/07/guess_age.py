@@ -3,6 +3,7 @@
 # 教材: https://ksubpb.github.io/2024/lesson04/assignments/#課題07-2-年齢を当てる
 import sys
 
+
 def find_age(age, low, high, step=1) -> int:
     mid = (low + high) // 2
 
@@ -13,6 +14,7 @@ def find_age(age, low, high, step=1) -> int:
         return find_age(age, mid + 1, high, step + 1)
 
     return step
+
 
 for age_string in sys.argv[1:]:
     age = int(age_string)
