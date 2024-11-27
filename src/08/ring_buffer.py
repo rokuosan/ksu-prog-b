@@ -48,6 +48,7 @@ class RingBuffer:
         self.data[self.counter % len(self.data)] = element
         self.counter = (self.counter + 1) % len(self.data)
 
+
 rb1 = RingBuffer(3)
 assert rb1.get(0) == None, "何も要素が入っていないため，None であるはずです"
 rb1.add(1)

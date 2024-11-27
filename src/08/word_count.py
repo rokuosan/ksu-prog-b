@@ -40,7 +40,9 @@ class WordCounts:
             if (
                 ext not in self.types
             ):  # ディクショナリに拡張子に対応する Counts が存在するか．
-                self.types[ext] = Counts() # 存在しなければ，新たに作成して，types に追加する．
+                self.types[ext] = (
+                    Counts()
+                )  # 存在しなければ，新たに作成して，types に追加する．
             # バイナリファイルを読み込むとエラーが発生するため，try-except でエラーを回避する．
             try:
                 self.types[ext].parse(path)  # ファイルを解析する．
