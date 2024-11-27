@@ -2,10 +2,6 @@ from typing import Optional
 
 
 class Vector:
-    """ベクトルを表すクラス
-    可変超引数でベクトルの要素を指定する
-    """
-
     def __init__(self, *args):
         self._data = list(args)
 
