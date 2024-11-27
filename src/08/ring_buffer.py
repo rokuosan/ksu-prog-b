@@ -1,15 +1,50 @@
 class RingBuffer:
+    """リングバッファを表すクラス
+
+    リングバッファは固定長の配列で、要素を追加するとラウンドロビン式に古い要素を上書きする。
+
+    容量が3のリングバッファに、1,2,3の順でデータを入れたとする。
+    その後に、4を追加すると、1が上書きされて、4,2,3のデータが格納される。
+    続いて、5を追加すると、2が上書きされて、4,5,3のデータが格納される。
+
+    Methods:
+        add: 要素を追加する
+        get: 指定したインデックスの要素を取得する
+        len: リングバッファの要素数を取得する
+
+    Attributes:
+        data: リングバッファのデータを格納するリスト
+    """
+
     def __init__(self, n: int = 12):
         self.counter = 0
         self.data = [None] * n
 
     def get(self, i: int):
+        """指定したインデックスの要素を取得する
+
+        Args:
+            i: 取得する要素のインデックス
+
+        Returns:
+            指定したインデックスの要素
+        """
         return self.data[i % len(self.data)]
 
     def len(self):
+        """リングバッファの要素数を取得する
+
+        Returns:
+            リングバッファの要素数
+        """
         return len([x for x in self.data if x is not None])
 
     def add(self, element):
+        """要素を追加する
+
+        Args:
+            element: 追加する要素
+        """
         self.data[self.counter % len(self.data)] = element
         self.counter = (self.counter + 1) % len(self.data)
 
